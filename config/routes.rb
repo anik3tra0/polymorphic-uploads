@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+
+  resources :notes do
+    resources :attachments
+  end
+
+  resources :events do
+    resources :attachments
+  end
+
+  resources :articles do
+    resources :attachments
+  end
+
+  root 'articles#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
